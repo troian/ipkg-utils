@@ -11,6 +11,11 @@ set -e
 
 version=1.0
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	echo "HOST OS is Darwin. Alias tar to gtar"
+	alias tar=gtar
+fi
+
 ipkg_extract_value() {
 	sed -e "s/^[^:]*:[[:space:]]*//"
 }
